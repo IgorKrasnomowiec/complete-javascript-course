@@ -368,11 +368,11 @@
 // const myName2 = `asadsadas`;
 // const myName3 = `are12k123213`;
 
-// console.log(myName.slice(-1));
-// console.log(myName1.slice(-1));
-// console.log(myName2.slice(-1));
-// console.log(myName3.slice(-1));
-
+// console.log(myName.slice(-1));asdsad
+// console.log(myName1.slice(-1));asdsad
+// console.log(myName2.slice(-1));asdsad
+// console.log(myName3.slice(-1));asdsad
+asdsad;
 // const someArray = [`cos1`, `cos2`, `cos3`, `cos4`, `cos5`, `cos6`];
 
 // console.log(someArray);
