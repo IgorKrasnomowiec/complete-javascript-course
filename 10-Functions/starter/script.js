@@ -154,44 +154,109 @@
 // };
 // addTax(0.43)(100);
 
-const poll = {
-  question: `what is your favourite programing language?`,
-  options: [`0:Javascript`, `1:Python`, `2:Rust`, `3:C++`],
-  answers: new Array(4).fill(0),
-  registerNewAnswer: function () {
-    const promptValue = parseInt(
-      prompt(
-        `what is your favourite programing language?
-      0:Javascript
-      1:Python
-      2:Rust
-      3:C++`
-      )
-    );
-    if (typeof promptValue === `number` && promptValue == 0) {
-      this.answers[0]++;
-    } else if (typeof promptValue === `number` && promptValue == 1) {
-      this.answers[1]++;
-    } else if (typeof promptValue === `number` && promptValue == 2) {
-      this.answers[2]++;
-    } else if (typeof promptValue === `number` && promptValue == 3) {
-      this.answers[3]++;
-    } else {
-      console.log(`You didnt put number or the number is too high`);
-    }
-    poll.displayResult();
-  },
-  displayResult: function (type = `string`) {
-    if (type === `string`) {
-      console.log(`Poll results are ${poll.answers}`);
-    } else if (type === `array`) {
-    } else {
-      console.log(`You didnt put string nor array`);
-    }
-  },
-};
+// const poll = {
+//   question: `what is your favourite programing language?`,
+//   options: [`0:Javascript`, `1:Python`, `2:Rust`, `3:C++`],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer: function () {
+//     const promptValue = parseInt(
+//       prompt(
+//         `what is your favourite programing language?
+//       0:Javascript
+//       1:Python
+//       2:Rust
+//       3:C++`
+//       )
+//     );
+//     if (typeof promptValue === `number` && promptValue == 0) {
+//       this.answers[0]++;
+//     } else if (typeof promptValue === `number` && promptValue == 1) {
+//       this.answers[1]++;
+//     } else if (typeof promptValue === `number` && promptValue == 2) {
+//       this.answers[2]++;
+//     } else if (typeof promptValue === `number` && promptValue == 3) {
+//       this.answers[3]++;
+//     } else {
+//       console.log(`You didnt put number or the number is too high`);
+//     }
+//     poll.displayResult();
+//   },
+//   displayResult: function (type = `string`) {
+//     if (type === `string`) {
+//       console.log(`Poll results are ${poll.answers}`);
+//     } else if (type === `array`) {
+//     } else {
+//       console.log(`You didnt put string nor array`);
+//     }
+//   },
+// };
 
-document
-  .querySelector(`.poll`)
-  .addEventListener(`click`, poll.registerNewAnswer.bind(poll));
-poll.displayResult(`array`);
+// document
+//   .querySelector(`.poll`)
+//   .addEventListener(`click`, poll.registerNewAnswer.bind(poll));
+// poll.displayResult(`array`);
+
+// const runOnce = function () {
+//   console.log(`This will never run again`);
+// };
+
+// //IIFE
+
+// (function () {
+//   console.log(`This will never run again`);
+//   const isPrivate = 23;
+// })();
+
+// (() => {
+//   console.log(`This will ALSO never run again`);
+// })();
+
+// const secureBooking = function () {
+//   let passengerCount = 0;
+
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passenger`);
+//   };
+// };
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+// console.dir(booker);
+
+// let f = 27;
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
+// const h = function () {
+//   const b = 777;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
+// g();
+// f();
+// // Re-assigning f function
+// h();
+// f();
+
+// const boardPassenger = function (n, wait) {
+//   const perGroup = n / 3;
+//   setTimeout(function () {
+//     console.log(`We are now boarding all${n} pasengers`);
+//     console.log(`there are 3 groups , each with ${perGroup} passengers`);
+//   }, wait * 1000);
+//   console.log(`Will start boarding in ${wait} seconds`);
+// };
+// boardPassenger(180, 3);
+(function () {
+  const header = document.querySelector(`h1`);
+  header.style.color = `red`;
+  document.body.addEventListener(`click`, function () {
+    header.style.color = `blue`;
+  });
+})();
